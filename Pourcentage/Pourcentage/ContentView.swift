@@ -1,0 +1,45 @@
+//
+//  ContentView.swift
+//  Pourcentage
+//
+//  Created by malika on 24/01/2020.
+//  Copyright © 2020 malika ouizbouben. All rights reserved.
+//
+
+import SwiftUI
+
+struct ContentView: View {
+   @State  var pourcentage: Double = 0.5
+    var body: some View {
+        
+        VStack(spacing: 20) {
+            Text("\(Int(pourcentage * 100 ))% ")
+        
+            Button(action: {
+                self.pourcentage += 0.01
+            }) {
+                Text("Incrémentation")
+            }
+        .padding(20)
+            
+            Slider(value: $pourcentage, in: 0...1)
+
+            .padding()
+            
+            
+            
+            
+            
+            
+            
+        }
+        }
+        
+    }
+
+
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+    }
+}
